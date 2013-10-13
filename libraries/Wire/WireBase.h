@@ -138,6 +138,13 @@ public:
      * pointed to
      */
     uint8 receive();
+    
+    uint8 read() { return receive(); };
+    void write(uint8 data) { send(data); };
+    void write(uint8* buf, int len) { send(buf, len); };
+    void write(int data) { send(data); };
+    void write(int* buf, int len) { send(buf, len); };
+    void write(char* buf) { send(buf); };
 };
 
 #endif // _WIREBASE_H_
